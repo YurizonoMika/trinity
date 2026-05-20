@@ -1,0 +1,6 @@
+{
+  "id": "com.cheesesynx.documents",
+  "name": "灵狐文档",
+  "icon": "apps/com.cheesesynx.documents/ico.svg",
+  "global": "DocumentsApp"
+}

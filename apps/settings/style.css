@@ -1,0 +1,391 @@
+.settings-app {
+  display: flex;
+  height: 100%;
+  gap: 12px;
+  font-family: "Google Sans", "Roboto Flex", sans-serif;
+  color: #ffffff;
+  position: relative;
+}
+
+.settings-sidebar {
+  width: 20%;
+  min-width: 180px;
+  max-width: 260px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 10px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.settings-profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.settings-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.18);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: grid;
+  place-items: center;
+}
+
+.settings-avatar img {
+  width: 22px;
+  height: 22px;
+  filter: brightness(0) invert(1);
+}
+
+.settings-username {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.settings-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.settings-menu .settings-menu-btn {
+  border: none;
+  border-radius: 12px;
+  padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  font-size: 13px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.settings-menu .settings-menu-btn.is-active {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.settings-content {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 10px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.08);
+  overflow: auto;
+}
+
+.settings-section {
+  display: none;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.settings-section.is-active {
+  display: flex;
+}
+
+.settings-card {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 14px;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.settings-card-title {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.settings-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.settings-toggle-row {
+  justify-content: space-between;
+}
+
+.settings-switch .fxui-switch {
+  width: 46px;
+  height: 24px;
+}
+
+.settings-switch .fxui-switch-thumb {
+  width: 18px;
+  height: 18px;
+}
+
+.settings-switch .fxui-switch.is-checked .fxui-switch-thumb {
+  transform: translateX(22px);
+}
+
+.settings-account {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.settings-account-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.settings-account-avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.18);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: grid;
+  place-items: center;
+}
+
+.settings-account-avatar img {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) invert(1);
+}
+
+.settings-account-name {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.settings-account-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.settings-input {
+  flex: 1 1 auto;
+}
+
+.settings-input .fxui-input {
+  border: none;
+  border-radius: 10px;
+  padding: 8px 10px;
+  background: rgba(255, 255, 255, 0.9);
+  color: #1b1b1f;
+  font-size: 13px;
+}
+
+.settings-modal .settings-input .fxui-control-row {
+  display: none;
+}
+
+.settings-modal .settings-input .fxui-input {
+  background: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+  text-align: center;
+  backdrop-filter: blur(10px) saturate(120%);
+  -webkit-backdrop-filter: blur(10px) saturate(120%);
+}
+
+.settings-button {
+  border: none;
+  border-radius: 10px;
+  padding: 8px 12px;
+  background: color-mix(in srgb, var(--md-primary), #ffffff 16%);
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.settings-wallpaper {
+  width: 160px;
+  height: 90px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.18);
+  background-size: cover;
+  background-position: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.settings-color-list {
+  display: flex;
+  gap: 8px;
+}
+
+.settings-color {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+}
+
+.settings-color span {
+  display: none;
+}
+
+.settings-danger {
+  color: #ff6b6b;
+  font-weight: 600;
+  background: transparent;
+  border: none;
+  text-align: left;
+  padding: 0;
+  cursor: pointer;
+}
+
+.settings-meta {
+  font-size: 12px;
+  color: color-mix(in srgb, #ffffff 70%, transparent);
+}
+
+.settings-modal {
+  position: absolute;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(10, 12, 18, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 20;
+}
+
+.settings-modal.is-open {
+  display: flex;
+}
+
+.settings-modal-card {
+  width: min(320px, 90%);
+  background: rgba(20, 22, 30, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 18px 30px rgba(0, 0, 0, 0.28);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.settings-modal-title {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.settings-modal-message {
+  font-size: 13px;
+  color: color-mix(in srgb, #ffffff 80%, transparent);
+  line-height: 1.4;
+}
+
+.settings-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.settings-modal-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.settings-modal-icon {
+  border: none;
+  background: rgba(255, 255, 255, 0.14);
+  color: #ffffff;
+  font-size: 12px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.settings-modal-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.settings-modal-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.settings-danger-button {
+  background: rgba(255, 107, 107, 0.22);
+  color: #ffeaea;
+}
+
+.settings-primary-button {
+  background: color-mix(in srgb, var(--md-primary), #ffffff 10%);
+  color: #ffffff;
+}
+
+.settings-primary-pill {
+  background: color-mix(in srgb, var(--md-primary), #ffffff 12%);
+  color: #ffffff;
+}
+
+.settings-danger-pill {
+  background: rgba(255, 107, 107, 0.28);
+  color: #ffeaea;
+}
+
+.settings-app,
+.settings-app .fxui-btn,
+.settings-app .fxui-input,
+.settings-app textarea,
+.settings-app select,
+.settings-app label,
+.settings-app p,
+.settings-app span {
+  color: #ffffff;
+  font-weight: 400;
+}
+
+.settings-app ::placeholder {
+  color: #ffffff;
+  opacity: 0.7;
+}
+
+.ui-no-glass .settings-app,
+.ui-no-glass .settings-app .fxui-btn,
+.ui-no-glass .settings-app .fxui-input,
+.ui-no-glass .settings-app textarea,
+.ui-no-glass .settings-app select,
+.ui-no-glass .settings-app label,
+.ui-no-glass .settings-app p,
+.ui-no-glass .settings-app span {
+  color: #2b2b2b;
+}
+
+.ui-no-glass .settings-app ::placeholder {
+  color: #2b2b2b;
+  opacity: 0.7;
+}
+
+@media (max-width: 720px) {
+  .settings-app {
+    flex-direction: column;
+  }
+
+  .settings-sidebar {
+    width: 100%;
+    max-width: none;
+  }
+}

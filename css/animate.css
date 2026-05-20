@@ -1,0 +1,105 @@
+.stage::before {
+  animation: wallpaper-in 1.2s ease 0.08s forwards;
+  transition: filter 0.7s ease;
+}
+
+.glass-mask {
+  animation: mask-fade 1.2s ease 0.2s forwards;
+}
+
+.panel {
+  animation: panel-rise 0.7s ease 0.9s forwards;
+}
+
+.stage.show-status::before {
+  animation: none;
+  filter: blur(0);
+  opacity: 1;
+}
+
+.stage.show-status .panel {
+  animation: panel-exit 0.55s ease forwards;
+}
+
+.stage.show-status .status-bar {
+  animation: status-rise 0.55s ease 0.15s forwards;
+  pointer-events: auto;
+}
+
+.main-menu.is-open {
+  animation: menu-rise 0.28s ease forwards;
+  pointer-events: auto;
+}
+
+.main-menu.is-closing {
+  animation: menu-rise 0.28s ease reverse forwards;
+  pointer-events: none;
+}
+
+.arrow-btn {
+  transition: transform 0.16s ease, background 0.16s ease;
+}
+
+@keyframes mask-fade {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes wallpaper-in {
+  0% {
+    opacity: 0;
+    filter: blur(0);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(14px);
+  }
+}
+
+@keyframes panel-rise {
+  0% {
+    opacity: 0;
+    transform: translateY(18px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes panel-exit {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(26px) scale(0.98);
+  }
+}
+
+@keyframes status-rise {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes menu-rise {
+  0% {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

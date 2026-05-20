@@ -1,0 +1,6 @@
+{
+  "id": "music",
+  "name": "音乐",
+  "icon": "apps/music/ico.svg",
+  "global": "MusicApp"
+}

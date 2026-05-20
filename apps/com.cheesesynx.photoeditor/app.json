@@ -1,0 +1,6 @@
+{
+  "id": "com.cheesesynx.photoeditor",
+  "name": "照片编辑器",
+  "icon": "apps/com.cheesesynx.photoeditor/ico.svg",
+  "global": "PhotoEditorApp"
+}

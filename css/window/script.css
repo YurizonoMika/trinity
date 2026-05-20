@@ -1,0 +1,207 @@
+.window-layer {
+  position: absolute;
+  inset: 0;
+  display: contents;
+  pointer-events: none;
+}
+
+.app-window {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  background: color-mix(in srgb, var(--md-primary) 50%, transparent);
+  backdrop-filter: blur(22px) saturate(150%);
+  -webkit-backdrop-filter: blur(22px) saturate(150%);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 18px;
+  color: #ffffff;
+  box-shadow: 0 22px 44px rgba(0, 0, 0, 0.34), inset 0 1px 0 rgba(255, 255, 255, 0.14);
+  overflow: hidden;
+  pointer-events: auto;
+  z-index: 4;
+  opacity: 0;
+  transform: translateY(6px) scale(0.98);
+  transition: opacity 0.18s ease, transform 0.18s ease;
+  will-change: opacity, transform;
+  transform-origin: center center;
+}
+
+.ui-no-glass .app-window,
+.ui-no-glass .status-app-menu {
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  background: color-mix(in srgb, var(--md-primary) 22%, #ffffff 68%);
+  color: var(--md-on-primary-container);
+  box-shadow: none;
+}
+
+.ui-no-glass .app-window-header {
+  background: color-mix(in srgb, var(--md-primary) 18%, #ffffff 72%);
+}
+
+.ui-no-glass .app-window-title-icon,
+.ui-no-glass .status-app-icon-img {
+  filter: none;
+}
+
+.app-window.is-ready {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.app-window.is-animating {
+  transition: opacity 0.18s ease, transform 0.18s ease, width 0.22s ease, height 0.22s ease, left 0.22s ease, top 0.22s ease;
+}
+
+.app-window.is-blurred,
+.app-window.is-maximized {
+  box-shadow: none;
+}
+
+.app-window-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  background: color-mix(in srgb, var(--md-primary) 30%, #ffffff 12%, transparent);
+  cursor: grab;
+  user-select: none;
+  pointer-events: auto;
+  touch-action: none;
+}
+
+.app-window-title {
+  font-family: "Google Sans", "Roboto Flex", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.app-window-title-icon {
+  width: 16px;
+  height: 16px;
+  display: block;
+  filter: brightness(0) invert(1);
+}
+
+.app-window-title-text {
+  display: inline-block;
+}
+
+.app-window-controls {
+  display: flex;
+  gap: 6px;
+  pointer-events: auto;
+}
+
+.app-window-btn {
+  width: 24px;
+  height: 24px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: color-mix(in srgb, var(--md-primary) 34%, #ffffff 12%, transparent);
+  color: #ffffff;
+  font-size: 14px;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.app-window-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.app-window-body {
+  background: rgba(8, 12, 20, 0.14);
+  padding: 14px;
+  flex: 1 1 auto;
+  min-height: 0;
+  font-family: "Roboto Flex", sans-serif;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.ui-low-transparency .app-window {
+  background: color-mix(in srgb, var(--md-primary) 50%, transparent);
+  backdrop-filter: blur(14px) saturate(130%);
+  -webkit-backdrop-filter: blur(14px) saturate(130%);
+}
+
+.ui-low-transparency .app-window-header {
+  background: color-mix(in srgb, var(--md-primary) 58%, #ffffff 28%);
+}
+
+.app-window-resize {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.8);
+  right: 8px;
+  bottom: 8px;
+  cursor: se-resize;
+}
+
+.app-window.no-resize .app-window-resize {
+  display: none;
+}
+
+.app-window.is-minimized {
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(var(--minimize-x, 0px), var(--minimize-y, 6px)) scale(var(--minimize-scale, 0.14));
+}
+
+.app-window.is-closing {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px) scale(0.96);
+}
+
+.status-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  max-width: calc(100% - 220px);
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0 6px;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+.status-center::-webkit-scrollbar {
+  height: 0;
+}
+
+.status-app-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: none;
+  background: color-mix(in srgb, var(--md-primary), #ffffff 12%);
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+
+.status-app-icon.is-minimized {
+  opacity: 0.55;
+  filter: grayscale(1);
+}
+
+.status-app-icon-img {
+  width: 16px;
+  height: 16px;
+  display: block;
+  filter: brightness(0) invert(1);
+}
+

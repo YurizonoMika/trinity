@@ -1,0 +1,266 @@
+.documents-app {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: 12px;
+  min-height: 0;
+  color: #ffffff;
+  font-family: "Roboto Flex", sans-serif;
+}
+
+.documents-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.documents-title {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.documents-tabs {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.documents-file-controls {
+  display: flex;
+  gap: 6px;
+  margin-left: auto;
+}
+
+.documents-file-btn {
+  border: none;
+  border-radius: 10px;
+  padding: 6px 12px;
+  background: rgba(255, 255, 255, 0.14);
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.documents-file-btn:hover {
+  background: rgba(255, 255, 255, 0.24);
+}
+
+.documents-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 6px 4px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.documents-toolbar.is-hidden {
+  display: none;
+}
+
+.documents-toolbar-btn {
+  border: none;
+  border-radius: 10px;
+  padding: 6px 10px;
+  background: rgba(255, 255, 255, 0.14);
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  min-width: 42px;
+}
+
+.documents-toolbar-btn.is-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 36px;
+  padding: 6px;
+}
+
+.documents-toolbar-btn.is-icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.documents-toolbar-btn.is-icon span:last-child {
+  display: none;
+}
+
+.documents-toolbar-btn:hover {
+  background: rgba(255, 255, 255, 0.24);
+}
+
+.documents-tab {
+  border: none;
+  border-radius: 999px;
+  padding: 6px 12px;
+  background: rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.documents-tab.is-active {
+  background: color-mix(in srgb, var(--md-primary) 65%, #ffffff 10%);
+  color: #ffffff;
+}
+
+.documents-body {
+  display: flex;
+  flex: 1 1 auto;
+  min-height: 0;
+  border-radius: 14px;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.2);
+  gap: 1px;
+}
+
+.documents-editor,
+.documents-preview {
+  flex: 1 1 50%;
+  min-width: 0;
+  height: 100%;
+  padding: 16px 18px;
+  overflow: auto;
+}
+
+.documents-editor {
+  border-right: 1px solid color-mix(in srgb, var(--md-primary) 70%, #ffffff 10%);
+  box-shadow: 1px 0 10px color-mix(in srgb, var(--md-primary) 60%, transparent);
+}
+
+.documents-editor {
+  border: none;
+  resize: none;
+  outline: none;
+  background: rgba(255, 255, 255, 0.02);
+  color: #ffffff;
+  font-family: "Roboto Flex", sans-serif;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.documents-preview {
+  background: rgba(255, 255, 255, 0.03);
+  color: #ffffff;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.documents-preview.is-hidden,
+.documents-editor.is-hidden {
+  display: none;
+}
+
+.documents-empty,
+.documents-error {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 12px;
+}
+
+.documents-preview h1,
+.documents-preview h2,
+.documents-preview h3,
+.documents-preview h4 {
+  margin: 12px 0 8px;
+}
+
+.documents-preview p {
+  margin: 8px 0;
+}
+
+.documents-preview code {
+  background: rgba(255, 255, 255, 0.12);
+  padding: 2px 6px;
+  border-radius: 6px;
+  font-family: "JetBrains Mono", "Roboto Mono", monospace;
+}
+
+.documents-preview pre {
+  background: rgba(0, 0, 0, 0.35);
+  padding: 12px;
+  border-radius: 10px;
+  overflow: auto;
+}
+
+.documents-preview pre code {
+  background: transparent;
+  padding: 0;
+}
+
+.documents-preview blockquote {
+  border-left: 3px solid color-mix(in srgb, var(--md-primary) 60%, #ffffff 10%);
+  padding-left: 12px;
+  margin: 8px 0;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.documents-preview a {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.documents-preview ul,
+.documents-preview ol {
+  padding-left: 20px;
+}
+
+.documents-preview hr {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  margin: 12px 0;
+}
+
+.documents-about {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-family: "Roboto Flex", sans-serif;
+  color: #ffffff;
+}
+
+.documents-about-title {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.documents-about-meta {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.documents-about-section {
+  margin-top: 6px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.documents-about-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.documents-about-name {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.documents-about-license {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.documents-about-link {
+  font-size: 12px;
+  color: #ffffff;
+  text-decoration: underline;
+  word-break: break-all;
+}

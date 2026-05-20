@@ -1,0 +1,17 @@
+.about-app {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  user-select: none;
+}
+
+.about-title {
+  font-family: "Google Sans", "Roboto Flex", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.about-version {
+  font-size: 13px;
+  color: color-mix(in srgb, #ffffff 80%, transparent);
+}

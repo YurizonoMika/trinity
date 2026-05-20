@@ -1,0 +1,81 @@
+.right-menu {
+  position: fixed;
+  min-width: 140px;
+  display: none;
+  flex-direction: column;
+  padding: 6px;
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--md-primary) 50%, transparent);
+  backdrop-filter: blur(20px) saturate(150%);
+  -webkit-backdrop-filter: blur(20px) saturate(150%);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  box-shadow: 0 18px 34px rgba(0, 0, 0, 0.32), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  opacity: 0;
+  transform: translateY(6px) scale(0.98);
+  pointer-events: none;
+  z-index: 3000;
+}
+
+.right-menu.is-open {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+  transition: opacity 0.14s ease, transform 0.14s ease;
+}
+
+.right-menu.is-closing {
+  opacity: 0;
+  transform: translateY(4px) scale(0.985);
+  pointer-events: none;
+  transition: opacity 0.12s ease, transform 0.12s ease;
+}
+
+.right-menu-item {
+  border: none;
+  background: transparent;
+  color: #ffffff;
+  text-shadow: none;
+  text-align: left;
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-family: "Roboto Flex", sans-serif;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.right-menu-item:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.ui-low-transparency .right-menu {
+  background: color-mix(in srgb, var(--md-primary) 50%, transparent);
+  backdrop-filter: blur(12px) saturate(125%);
+  -webkit-backdrop-filter: blur(12px) saturate(125%);
+}
+
+.right-menu-item:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.right-menu-separator {
+  height: 1px;
+  margin: 4px 6px;
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.ui-no-glass .right-menu {
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  background: color-mix(in srgb, var(--md-primary) 22%, #ffffff 68%);
+  color: var(--md-on-primary-container);
+  box-shadow: none;
+}
+
+.ui-no-glass .right-menu-item {
+  color: var(--md-on-primary-container);
+}
+
+.ui-no-glass .right-menu-item:hover {
+  background: color-mix(in srgb, var(--md-primary) 14%, #ffffff 74%);
+}

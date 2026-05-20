@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trinity</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600&family=Roboto+Flex:opsz,wght@8..144,400;8..144,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animate.css" />
+  <link rel="stylesheet" href="css/function.css" />
+  <link rel="stylesheet" href="script/libfxui/fxui.css" />
+  <link rel="stylesheet" href="script/rightmenu/script.css" />
+  <link rel="stylesheet" href="css/window/script.css" />
+  <link rel="stylesheet" href="apps/about/style.css" />
+  <link rel="stylesheet" href="apps/launchpad/style.css" />
+  <link rel="stylesheet" href="apps/settings/style.css" />
+  <link rel="stylesheet" href="apps/note/style.css" />
+  <link rel="stylesheet" href="apps/files/style.css" />
+</head>
+<body>
+  <main class="stage">
+    <div class="glass-mask" aria-hidden="true"></div>
+    <section class="desktop" id="desktop" aria-label="桌面">
+      <div class="desktop-icon" data-app="note" style="left: 40px; top: 60px;">
+        <img src="apps/note/ico.svg" alt="" />
+        <span>文本编辑器</span>
+      </div>
+    </section>
+    <section class="panel" aria-label="身份输入">
+      <div class="avatar-frame">
+        <div class="avatar" id="avatar" role="button" aria-label="上传头像">
+          <img class="avatar-icon" src="icon/avatar.svg" alt="" />
+        </div>
+      </div>
+      <div class="prompt">你是谁?</div>
+      <label class="input-wrap">
+        <input id="nameInput" type="text" placeholder="请输入你的名字" />
+        <button class="arrow-btn" aria-label="确认">
+          <img class="arrow-icon" src="icon/arrow-fwd.svg" alt="" />
+        </button>
+      </label>
+      <input id="avatarUpload" type="file" accept="image/*" hidden />
+    </section>
+    <section class="status-bar" aria-label="status-bar">
+      <button class="menu-button" aria-label="main-menu">
+        <img class="menu-icon" src="icon/menu.svg" alt="" />
+      </button>
+      <div class="status-center" id="statusCenter"></div>
+      <button class="status-time" id="timeDisplay" type="button" aria-label="显示完整时间">--:-- 星期-</button>
+      <div class="time-popover" id="timePopover" aria-hidden="true">
+        <div class="time-popover-clock" id="timePopoverClock">--:--:--</div>
+        <div class="time-popover-date" id="timePopoverDate">----年--月--日 星期-</div>
+      </div>
+    </section>
+    <section class="main-menu" aria-label="main-menu" aria-hidden="true">
+      <div class="menu-header">
+        <div class="menu-avatar" id="menuAvatar" aria-hidden="true"></div>
+        <div class="menu-name" id="menuName">游客</div>
+      </div>
+      <div class="menu-note">
+        <img class="menu-note-icon" src="icon/safe.svg" alt="" />
+        <span>Trinity Web应用平台不会保存你的个人信息</span>
+      </div>
+      <button class="menu-item" id="launchpadAppButton" type="button" data-app="launchpad" data-pin="false">
+        <span class="menu-item-icon" aria-hidden="true">
+          <img class="menu-icon" src="apps/launchpad/ico.svg" alt="" />
+        </span>
+        <span>所有App</span>
+      </button>
+      <button class="menu-item" id="settingsAppButton" type="button" data-app="settings">
+        <span class="menu-item-icon" aria-hidden="true">
+          <img class="menu-icon" src="apps/settings/ico.svg" alt="" />
+        </span>
+        <span>设置</span>
+      </button>
+      <button class="menu-item" id="aboutAppButton" type="button" data-app="about">
+        <span class="menu-item-icon" aria-hidden="true">
+          <img class="about-icon" src="apps/about/ico.svg" alt="" />
+        </span>
+        <span>关于</span>
+      </button>
+      <button class="menu-item" id="noteAppButton" type="button" data-app="note">
+        <span class="menu-item-icon" aria-hidden="true">
+          <img class="menu-icon" src="apps/note/ico.svg" alt="" />
+        </span>
+        <span>文本编辑器</span>
+      </button>
+      <button class="menu-item" id="filesAppButton" type="button" data-app="files">
+        <span class="menu-item-icon" aria-hidden="true">
+          <img class="menu-icon" src="apps/files/ico.svg" alt="" />
+        </span>
+        <span>文件管理</span>
+      </button>
+      <button class="logout-button" id="logoutButton" type="button">退出登录</button>
+    </section>
+  </main>
+  <script src="script/animate.js" defer></script>
+  <script src="script/script.js" defer></script>
+  <script src="script/libfxui/fxui.js" defer></script>
+  <script src="script/rightmenu/script.js" defer></script>
+  <script src="script/function.js" defer></script>
+  <script src="script/window/script.js" defer></script>
+  <script src="apps/about/app.js" defer></script>
+  <script src="apps/launchpad/app.js" defer></script>
+  <script src="apps/settings/app.js" defer></script>
+  <script src="apps/note/app.js" defer></script>
+  <script src="apps/files/app.js" defer></script>
+</body>
+</html>

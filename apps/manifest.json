@@ -1,0 +1,13 @@
+{
+  "apps": [
+    "about",
+    "note",
+    "files",
+    "settings",
+    "launchpad",
+    "com.cheesesynx.cloud",
+    "music",
+    "com.cheesesynx.documents",
+    "com.cheesesynx.photoeditor"
+  ]
+}

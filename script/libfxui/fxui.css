@@ -1,0 +1,186 @@
+:root {
+  --fxui-surface: rgba(255, 255, 255, 0.12);
+  --fxui-surface-strong: rgba(255, 255, 255, 0.22);
+  --fxui-track: rgba(255, 255, 255, 0.12);
+  --fxui-thumb: #ffffff;
+  --fxui-text-muted: rgba(255, 255, 255, 0.75);
+}
+
+.fxui-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: none;
+  border-radius: 10px;
+  padding: 6px 10px;
+  background: linear-gradient(135deg, var(--fxui-surface), color-mix(in srgb, var(--md-primary) 24%, var(--fxui-surface)) 55%, var(--fxui-surface-strong));
+  background-size: 200% 200%;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  overflow: hidden;
+  transition: background-position 0.35s ease, filter 0.2s ease, transform 0.2s ease;
+}
+
+.fxui-btn:hover {
+  background-position: 100% 0;
+  filter: brightness(1.08);
+}
+
+.fxui-btn:active {
+  background-position: 0 100%;
+  filter: brightness(0.9);
+}
+
+.fxui-btn:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--md-primary) 65%, #ffffff 20%);
+  outline-offset: 2px;
+}
+
+.fxui-btn-icon {
+  width: 16px;
+  height: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fxui-btn-ripple {
+  position: absolute;
+  top: var(--fxui-ripple-y, 50%);
+  left: var(--fxui-ripple-x, 50%);
+  width: var(--fxui-ripple-size, 120px);
+  height: var(--fxui-ripple-size, 120px);
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--md-primary) 60%, #ffffff 20%);
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.fxui-btn-ripple.is-animating {
+  animation: fxui-btn-ripple 0.6s ease-out;
+}
+
+@keyframes fxui-btn-ripple {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0;
+  }
+}
+
+.fxui-btn-icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.fxui-control {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 12px;
+}
+
+.fxui-control-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+}
+
+.fxui-control-label {
+  color: #ffffff;
+}
+
+.fxui-control-value {
+  color: var(--fxui-text-muted);
+}
+
+.fxui-slider {
+  position: relative;
+  height: 12px;
+  border-radius: 999px;
+  background: var(--fxui-track);
+  cursor: pointer;
+}
+
+.fxui-slider-fill {
+  position: absolute;
+  inset: 0;
+  width: 0;
+  background: color-mix(in srgb, var(--md-primary) 65%, #ffffff 15%);
+  border-radius: inherit;
+}
+
+.fxui-slider-thumb {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--fxui-thumb);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  transform: translate(-50%, -50%);
+}
+
+.fxui-slider:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--md-primary) 65%, #ffffff 20%);
+  outline-offset: 2px;
+}
+
+.fxui-input {
+  min-height: 30px;
+  padding: 6px 10px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.fxui-input[contenteditable="true"]:empty::before {
+  content: attr(data-placeholder);
+  color: var(--fxui-text-muted);
+}
+
+.fxui-switch {
+  position: relative;
+  width: 38px;
+  height: 20px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.16);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  padding: 2px;
+  transition: background 0.2s ease;
+}
+
+.fxui-switch.is-checked {
+  background: color-mix(in srgb, var(--md-primary) 65%, #ffffff 15%);
+}
+
+.fxui-switch-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #ffffff;
+  transform: translateX(0);
+  transition: transform 0.2s ease;
+}
+
+.fxui-switch.is-checked .fxui-switch-thumb {
+  transform: translateX(18px);
+}
+
+.fxui-switch:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--md-primary) 65%, #ffffff 20%);
+  outline-offset: 2px;
+}

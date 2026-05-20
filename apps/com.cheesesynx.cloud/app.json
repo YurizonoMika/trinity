@@ -1,0 +1,6 @@
+{
+  "id": "com.cheesesynx.cloud",
+  "name": "芝士云-面板",
+  "icon": "apps/com.cheesesynx.cloud/ico.svg",
+  "global": "CloudApp"
+}
